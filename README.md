@@ -28,14 +28,7 @@ O sistema dividirá uma compra em subpedidos por restaurante. Quando dois ou mai
 
 ## Documentação
 
-- [Requisitos do produto](docs/requisitos-do-produto.md)
-- [Modelo de domínio](docs/modelo-de-dominio.md)
-- [Regras de entrega](docs/regras-de-entrega.md)
-- [Roadmap](docs/roadmap.md)
-- [Jornadas do produto](docs/jornadas-do-produto.md)
-- [Arquitetura proposta](docs/arquitetura-proposta.md)
-- [Observabilidade e mensageria](docs/observabilidade-e-mensageria.md)
-- [Registro de decisões](docs/decisoes/README.md)
+Os documentos de planejamento são mantidos localmente e não fazem parte deste repositório.
 
 ## Situação atual
 
