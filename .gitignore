@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+.vscode/
+*.iml
+.env
+.env.*
+!.env.example
+**/target/
+**/.quarkus/
+*.log
+/docs/
