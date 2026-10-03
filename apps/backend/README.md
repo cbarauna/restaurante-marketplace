@@ -9,7 +9,20 @@ Backend do Restaurante Marketplace, construído com Java 21 e Quarkus 3.39.5.
 - Dev UI: <http://localhost:8080/q/dev/>
 - Health: <http://localhost:9000/q/health>
 
-Em desenvolvimento e testes, o Quarkus Dev Services inicia um PostgreSQL automaticamente quando o Docker está disponível.
+Em desenvolvimento, o Quarkus Dev Services inicia PostgreSQL e Keycloak automaticamente quando o Docker está disponível. O realm `restaurante-marketplace` é importado com duas contas exclusivamente locais:
+
+| Usuário | Senha | Papel |
+|---|---|---|
+| `owner@restaurante.local` | `owner-dev-password` | `restaurant-owner` |
+| `admin@restaurante.local` | `admin-dev-password` | `platform-admin` |
+| `manager@restaurante.local` | `manager-dev-password` | Papel local apó aceitar convite |
+| `operator@restaurante.local` | `operator-dev-password` | Papel local apó aceitar convite |
+
+Essas credenciais são públicas e não devem ser reutilizadas fora do ambiente de desenvolvimento. Os testes automatizados usam identidades simuladas e não iniciam o Keycloak.
+
+Para obter um token local, abra o card OpenID Connect na Dev UI, clique em **Keycloak provider**, informe uma das contas acima e use a ação de teste. O perfil de desenvolvimento configura explicitamente o grant `password` para exibir esse formulário. O backend espera o cabeçalho `Authorization: Bearer <token>` nas operações protegidas.
+
+Gerentes e operadores não recebem papéis globais no Keycloak. A permissão é concedida no banco da aplicação quando o convite do restaurante é aceito.
 
 ## Running the application in dev mode
 

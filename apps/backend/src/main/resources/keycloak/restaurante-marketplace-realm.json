@@ -1,0 +1,104 @@
+{
+  "realm": "restaurante-marketplace",
+  "displayName": "Restaurante Marketplace (desenvolvimento)",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "resetPasswordAllowed": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "roles": {
+    "realm": [
+      {
+        "name": "restaurant-owner",
+        "description": "Responsável por administrar os restaurantes aos quais está vinculado"
+      },
+      {
+        "name": "platform-admin",
+        "description": "Administrador da plataforma responsável por análise e aprovação"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "restaurante-marketplace-backend",
+      "name": "Restaurante Marketplace Backend",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "bearerOnly": false,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "http://localhost:*/*"
+      ],
+      "webOrigins": [
+        "http://localhost:*"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      }
+    }
+  ],
+  "users": [
+    {
+      "username": "owner@restaurante.local",
+      "email": "owner@restaurante.local",
+      "emailVerified": true,
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "owner-dev-password",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "restaurant-owner"
+      ]
+    },
+    {
+      "username": "admin@restaurante.local",
+      "email": "admin@restaurante.local",
+      "emailVerified": true,
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin-dev-password",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "platform-admin"
+      ]
+    },
+    {
+      "username": "manager@restaurante.local",
+      "email": "manager@restaurante.local",
+      "emailVerified": true,
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "manager-dev-password",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "operator@restaurante.local",
+      "email": "operator@restaurante.local",
+      "emailVerified": true,
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "operator-dev-password",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}
